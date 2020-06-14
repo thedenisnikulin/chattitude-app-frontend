@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/chattitude-app/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/chattitude-app/static/js/main.26bf2778.chunk.js",
+    "main.js.map": "/chattitude-app/static/js/main.26bf2778.chunk.js.map",
+    "runtime-main.js": "/chattitude-app/static/js/runtime-main.a51f539c.js",
+    "runtime-main.js.map": "/chattitude-app/static/js/runtime-main.a51f539c.js.map",
+    "static/js/2.9d03a15d.chunk.js": "/chattitude-app/static/js/2.9d03a15d.chunk.js",
+    "static/js/2.9d03a15d.chunk.js.map": "/chattitude-app/static/js/2.9d03a15d.chunk.js.map",
+    "index.html": "/chattitude-app/index.html",
+    "precache-manifest.c3734a705c8e905eac6e96dd201ab54b.js": "/chattitude-app/precache-manifest.c3734a705c8e905eac6e96dd201ab54b.js",
+    "service-worker.js": "/chattitude-app/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/chattitude-app/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.9d03a15d.chunk.js.LICENSE.txt": "/chattitude-app/static/js/2.9d03a15d.chunk.js.LICENSE.txt",
+    "static/media/auth.svg": "/chattitude-app/static/media/auth.3b2aa637.svg",
+    "static/media/av0.svg": "/chattitude-app/static/media/av0.7e9057c5.svg",
+    "static/media/av1.svg": "/chattitude-app/static/media/av1.14efb9e9.svg",
+    "static/media/av2.svg": "/chattitude-app/static/media/av2.e5dd2777.svg",
+    "static/media/av3.svg": "/chattitude-app/static/media/av3.e4c82f57.svg",
+    "static/media/av4.svg": "/chattitude-app/static/media/av4.3ca31b86.svg",
+    "static/media/av5.svg": "/chattitude-app/static/media/av5.913434a9.svg",
+    "static/media/text-logo.svg": "/chattitude-app/static/media/text-logo.e32e0431.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a51f539c.js",
+    "static/js/2.9d03a15d.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.26bf2778.chunk.js"
+  ]
+}

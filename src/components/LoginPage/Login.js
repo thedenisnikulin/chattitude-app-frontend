@@ -15,7 +15,7 @@ export const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:7000/login', { 
+    axios.post(`${props.url}/login`, { 
       username: userData.username,
       password: userData.password 
     })
@@ -37,7 +37,7 @@ export const Login = (props) => {
   return (
       <div className="auth-wrap">
       <div className="split left">
-        <div className='auth-title'><span style={{fontWeight: "400"}}>chatterest |</span>  LOG IN</div>
+        <div className='auth-title'><span style={{fontWeight: "400"}}>Chattitude |</span>  LOG IN</div>
         <div className="centered">
           <p>{message}</p>
           <form className="form-wrap" onSubmit={handleSubmit}>
@@ -61,7 +61,7 @@ export const Login = (props) => {
               variant="contained" 
               type="submit" 
               color="primary"
-            > Log in
+            > Submit
             </Button>
             </div>
           </form>

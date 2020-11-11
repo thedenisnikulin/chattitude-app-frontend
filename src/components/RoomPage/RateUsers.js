@@ -22,7 +22,7 @@ const RateUsers = (props) => {
             };
         };
         setRoom({ ...room, users: arr });
-        await axios.post('http://localhost:7000/room/add-rep', {
+        await axios.post(`${props.url}/room/add-rep`, {
             valueToAdd: valueToAdd,
             username: user.username,
         });

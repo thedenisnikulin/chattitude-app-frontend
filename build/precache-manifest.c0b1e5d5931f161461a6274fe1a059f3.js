@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b910ee83c855fe7c5e9784497c4ae93",
+    "revision": "06f923fe320648d3610fb144cc3ba57a",
     "url": "/chattitude-app/index.html"
   },
   {
-    "revision": "306e3f1ffa341180c161",
+    "revision": "9c869020daa7807803fc",
     "url": "/chattitude-app/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/chattitude-app/static/js/2.5259a7c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "306e3f1ffa341180c161",
-    "url": "/chattitude-app/static/js/main.b892d541.chunk.js"
+    "revision": "9c869020daa7807803fc",
+    "url": "/chattitude-app/static/js/main.4b26b5e8.chunk.js"
   },
   {
     "revision": "fcdd7ee06bd94cb8d7c5",

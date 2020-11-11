@@ -14,7 +14,7 @@ const Register = (props) => {
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      axios.post('http://localhost:7000/register', { 
+      axios.post(`${props.url}/register`, { 
         username: userData.username,
         bio: userData.bio,
         password: userData.password
@@ -38,7 +38,7 @@ const Register = (props) => {
     return (
       <div className="auth-wrap">
       <div className="split right">
-        <div className='auth-title'><span style={{fontWeight: "400"}}>chatterest |</span> REGISTER</div>
+        <div className='auth-title' style={{marginTop: "4rem"}}><span style={{fontWeight: "400"}}>Chattitude |</span> REGISTER</div>
         <div className="centered">
           <p>{message}</p>
           <form className="form-wrap" onSubmit={handleSubmit}>
@@ -69,11 +69,12 @@ const Register = (props) => {
               variant="outlined"
               onChange={handleChange} />
             <div>
+            <div style={{marginBottom: "10px"}}>By clicking submit you are agreeing to the <a target="_blank" rel="noopener noreferrer" href="https://www.privacypolicygenerator.info/live.php?token=rSVBZEcB5WAFTWtpcB1AJnzhOE8tPpUu">Privacy policy</a></div>
             <Button style={{backgroundColor: "#74D69D"}} fullWidth
               variant="contained" 
               type="submit" 
               color="primary"
-            > Register
+            > Submit
             </Button>
             </div>
           </form>

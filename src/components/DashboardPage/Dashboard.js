@@ -57,7 +57,7 @@ const Dashboard = (props) => {
   }, [room]);
 
   const fetchPeopleSearching = () => {
-    axios.get('http://localhost:7000/mm/get-users-searching')
+    axios.get(`${props.url}/mm/get-users-searching`)
       .then(response => response.data.data)
       .then(data => {
         setUsersSearching(data.usersSearching)
@@ -65,7 +65,7 @@ const Dashboard = (props) => {
   }
 
   const findRoom = () => {
-    axios.post('http://localhost:7000/mm/find-room', {
+    axios.post(`${props.url}/mm/find-room`, {
       topic: room.topic.toLowerCase()
     }).then(result => {
       console.log(result)
@@ -76,7 +76,7 @@ const Dashboard = (props) => {
   }
 
   const checkIfReady = async () => {
-    let result = await axios.post('http://localhost:7000/mm/confirm-room-readiness', {
+    let result = await axios.post(`${props.url}/mm/confirm-room-readiness`, {
       topic: room.topic.toLowerCase(),
     })
     const data = result.data.data;
@@ -93,7 +93,8 @@ const Dashboard = (props) => {
     console.log('i was called! (break)')
     e.preventDefault();
     setIsSearching(false);
-    await axios.post('http://localhost:7000/mm/break-search');
+    setIsRoomFound(false);
+    await axios.post(`${props.url}/mm/break-search`);
   }
 
   return (
@@ -106,7 +107,7 @@ const Dashboard = (props) => {
               <div className="userdata-inner">
                 <UserAvatar username={userData.username} size="large"/>
                 <div className="userdata-right-from-pic">
-                  <div className="username">{userData.username}</div>
+                  <div className="username">@{userData.username}</div>
                   <div className="rep">reputation: <span className="rep-count">{userData.rep}</span></div>
                 </div>
               </div>

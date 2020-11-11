@@ -13,7 +13,7 @@ import Room from './components/RoomPage/Room'
 
 const App = () => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
-
+  const url = "https://chattitude.herokuapp.com"
   const [ userData, setUserData ] = useState({
     username: null,
     password: null,
@@ -35,7 +35,7 @@ const App = () => {
   const verifyToken = async () => {
     console.log('access before verification" ' + access)
     console.log(axios.defaults.headers.common['Authorization']);
-    await axios.post('http://localhost:7000/token')
+    await axios.post(`${url}/token`)
       .then(response => response.data.data)
       .then(data => {
         console.log(data)
@@ -67,21 +67,21 @@ const App = () => {
               return(<Redirect to="/dashboard"/>)
             } else {
               console.log('a l ' + access)
-              return(<Login {...props} accessState={{access, setAccess}} userDataState={{ userData, setUserData }} messageState={{ message, setMessage }} />)
+              return(<Login {...props} url={url} accessState={{access, setAccess}} userDataState={{ userData, setUserData }} messageState={{ message, setMessage }} />)
             }
         }} 
         />
 
         <Route exact path="/register"
-          render={props => access ? <Redirect to="/dashboard" /> : <Register {...props} history={history} userDataState={{ userData, setUserData }} messageState={{ message, setMessage }} />} 
+          render={props => access ? <Redirect to="/dashboard" /> : <Register {...props} url={url} history={history} userDataState={{ userData, setUserData }} messageState={{ message, setMessage }} />} 
         />
 
         <ProtectedRoute exact path='/dashboard' verifyToken={verifyToken} access={access} loading={loading}>
-          <Dashboard accessState={{access, setAccess}} userDataState={{ userData, setUserData }} roomState={{ room, setRoom }} />
+          <Dashboard url={url} accessState={{access, setAccess}} userDataState={{ userData, setUserData }} roomState={{ room, setRoom }} />
         </ProtectedRoute>
 
         <ProtectedRoute exact path='/room' verifyToken={verifyToken} access={access} loading={loading}>
-          <Room history={history} userDataState={{ userData, setUserData }} roomState={{ room, setRoom }}/>
+          <Room url={url} history={history} userDataState={{ userData, setUserData }} roomState={{ room, setRoom }}/>
         </ProtectedRoute>
 
       </Switch>

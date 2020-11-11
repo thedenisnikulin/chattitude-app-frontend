@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-import ControlledExpansionPanel from "./ExpansionPanel"
+import ControlledExpansionPanel from "./ControlledExpansionPanel"
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
@@ -13,7 +13,7 @@ const Room = (props) => {
     
     return(
         <div>
-            <Chat userDataState={props.userDataState} roomState={props.roomState}/>
+            <Chat url={props.url} userDataState={props.userDataState} roomState={props.roomState}/>
         </div>
     );
 };
@@ -29,7 +29,7 @@ const Chat = (props) => {
 
     // initialize data on mount
     useEffect(() => {
-        socket = io.connect('http://localhost:7000');
+        socket = io.connect(`${props.url}`);
         console.log(userData)
         socket.emit('connectRoom', userData.roomId);
         socket.emit('init');
@@ -90,7 +90,7 @@ const Chat = (props) => {
                         <IconButton color="primary" style={{color: "white"}} onClick={() => {setIsUserLeaving(true); setOpen(true)}}>
                             <NavigateBeforeIcon />
                         </IconButton>
-                        <ModalOnLeave openModalState={{open, setOpen}} userData={userData} roomState={ props.roomState } />
+                        <ModalOnLeave url={props.url} openModalState={{open, setOpen}} userData={userData} roomState={ props.roomState } />
                         <div className="title-text">#{room.topic}</div>
                     </div>
                     <div className="members-container">
@@ -117,7 +117,7 @@ const Chat = (props) => {
                     </div>
                     <form className="msg-form" onSubmit={handleSubmit}>
                         <input placeholder="type here" className="msg-input" onChange={handleChange} value={message}/>
-                        <button className="msg-send">></button>
+                        <button className="msg-send">{'>'}</button>
                     </form>
                 </div>
             </div>

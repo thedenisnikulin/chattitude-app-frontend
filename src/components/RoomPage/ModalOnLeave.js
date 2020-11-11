@@ -21,7 +21,7 @@ export default function ModalOnLeave(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <RateUsers userData={props.userData} roomState={ props.roomState }/>
+        <RateUsers url={props.url} userData={props.userData} roomState={ props.roomState }/>
       </Dialog>
     </div>
   );

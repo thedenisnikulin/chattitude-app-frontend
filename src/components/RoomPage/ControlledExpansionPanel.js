@@ -34,19 +34,23 @@ export default function ControlledExpansionPanel(props) {
 
   return (
     <div className={classes.panel}>
-      <ExpansionPanel className={classes.smth} expanded={expanded === 'panel'} onChange={handleChange('panel')}>
+      <ExpansionPanel className={classes.smth} style={{overflow: "hidden"}} expanded={expanded === 'panel'} onChange={handleChange('panel')}>
         <ExpansionPanelSummary className={classes.smth}
+          style={{overflow: "hidden"}}
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography className={classes.heading}><div className="flexx">
+          <Typography style={{overflow: "hidden"}} className={classes.heading}>
+            <div className="flexx">
                 <UserAvatar username={props.user.username} size="small" />
-                <div className="member-username">{props.user.username}</div>
-            </div></Typography>
+                <div className="member-username">@{props.user.username}</div>
+            </div>
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            {props.user.bio}
+            <div><span style={{color: "#74d69d"}}>reputation:</span> {props.user.rep}</div>
+            <div><span style={{color: "#74d69d"}}>bio:</span> {props.user.bio}</div>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

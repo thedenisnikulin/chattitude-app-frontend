@@ -3,11 +3,10 @@ import React, { useEffect, useState } from 'react';
 const TopicSelection = (props) => {
     const TOPICS = [
       'random', 'programming', 'design', 'history', 
-      'sport', 'politics', 'foreign languages', 
-      'media', 'anime', 'art', 'music', 'code',
-      'business', 'rap music', 'rock music',
-      'drawing', 'movies', 'health care', 'news',
-      'mathematics', 'literature'
+      'sport', 'politics', 'foreign_languages', 
+      'media', 'anime', 'art', 'music','business', 
+      'rap_music', 'rock_music', 'drawing', 'movies', 
+      'health_care', 'news','mathematics', 'literature'
     ].sort();
     const { room, setRoom } = props.roomState;
     const [ changeableTopics, setChangeableTopics ] = useState([]);

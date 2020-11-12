@@ -26,7 +26,7 @@ const Dashboard = (props) => {
   // executes matchmaking logic
   // send req to find room, then send req to confirm if room is ready
   useInterval(async () => {
-    fetchPeopleSearching();
+    await fetchPeopleSearching();
     if (!isRoomFound) {
       await findRoom();
       console.log('i found it')
@@ -56,7 +56,7 @@ const Dashboard = (props) => {
     }
   }, [room]);
 
-  const fetchPeopleSearching = () => {
+  const fetchPeopleSearching = async () => {
     axios.get(`${props.url}/mm/get-users-searching`)
       .then(response => response.data.data)
       .then(data => {
@@ -64,7 +64,7 @@ const Dashboard = (props) => {
       })
   }
 
-  const findRoom = () => {
+  const findRoom = async () => {
     axios.post(`${props.url}/mm/find-room`, {
       topic: room.topic.toLowerCase()
     }).then(result => {

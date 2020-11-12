@@ -33,6 +33,9 @@ const Register = (props) => {
           };
           setMessage(data.message)
         })
+		.catch(err => {
+			setMessage(err.message);
+		})
     }
   
     return (
@@ -40,7 +43,7 @@ const Register = (props) => {
       <div className="split right">
         <div className='auth-title' style={{marginTop: "4rem"}}><span style={{fontWeight: "400"}}>Chattitude |</span> REGISTER</div>
         <div className="centered">
-          <p>{message}</p>
+		<p style={{backgroundColor: "#f28182", color: "white"}}>{message}</p>
           <form className="form-wrap" onSubmit={handleSubmit}>
             <TextField style={{margin: "0 0 1rem 0"}} fullWidth required 
               id="outlined-basic" 

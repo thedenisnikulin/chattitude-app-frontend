@@ -32,14 +32,17 @@ export const Login = (props) => {
       };
       setAccess(data.success);
       setMessage(data.message)
-    })
+	})
+	.catch(err => {
+		setMessage(err.message);
+	})
   }
   return (
       <div className="auth-wrap">
       <div className="split left">
         <div className='auth-title'><span style={{fontWeight: "400"}}>Chattitude |</span>  LOG IN</div>
         <div className="centered">
-          <p>{message}</p>
+		<p style={{backgroundColor: "#f28182", color: "white"}}>{message}</p>
           <form className="form-wrap" onSubmit={handleSubmit}>
             <TextField style={{margin: "0 0 1rem 0"}} fullWidth required 
               id="outlined-basic" 

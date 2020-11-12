@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import history from './components/services/history'
 
 import Home from './components/HomePage/Home';
-import { Login, Logout } from './components/LoginPage/Login';
+import { Login } from './components/LoginPage/Login';
 import Register from './components/RegisterPage/Register';
 
 import ProtectedRoute from './components/ProtectedRoute'
@@ -13,7 +13,7 @@ import Room from './components/RoomPage/Room'
 
 const App = () => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
-  const url = "https://chattitude.herokuapp.com"
+  const url = window.location.origin; 
   const [ userData, setUserData ] = useState({
     username: null,
     password: null,
@@ -27,8 +27,7 @@ const App = () => {
     users: [],
     isReady: false
   });
-  // change access = false; loading = true;
-  const [ access, setAccess ] = useState(false);  // this state is not working properly with router, gonna use redux later
+  const [ access, setAccess ] = useState(false);
   const [ loading, setLoading ] = useState(true);
   const [ message, setMessage ] = useState();
 
